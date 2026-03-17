@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  {{ name }}:
+    build: .
+    container_name: {{ name }}
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./src:/app/src
+    restart: unless-stopped
