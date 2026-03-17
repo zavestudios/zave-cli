@@ -119,6 +119,11 @@ class WorkloadGenerator:
         content = template.render()
         self._write_file("requirements.txt", content)
 
+        # Create requirements-dev.txt
+        template = self.env.get_template("python/requirements-dev.txt.j2")
+        content = template.render()
+        self._write_file("requirements-dev.txt", content)
+
         # Create tests directory
         self._write_file("tests/__init__.py", "")
         template = self.env.get_template("python/test_main.py.j2")
