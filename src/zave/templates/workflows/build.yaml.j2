@@ -10,4 +10,6 @@ jobs:
   build:
     uses: zavestudios/platform-pipelines/.github/workflows/container-build.yaml@main
     with:
-      workload_name: {{ name }}
+      image_name: zavestudios/{{ name }}
+    secrets:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
